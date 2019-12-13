@@ -1,0 +1,13 @@
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\WcfServiceApp.dll.config
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\WcfServiceApp.dll
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\WcfServiceApp.pdb
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\EntityFramework.dll
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\EntityFramework.SqlServer.dll
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\EntityFramework.xml
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\EntityFramework.SqlServer.xml
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\bin\ru\EntityFramework.resources.dll
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\obj\Debug\WcfServiceApp.csprojAssemblyReference.cache
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\obj\Debug\WcfServiceApp.csproj.CoreCompileInputs.cache
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\obj\Debug\WcfServiceApp.csproj.CopyComplete
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\obj\Debug\WcfServiceApp.dll
+C:\Users\ademin\source\repos\WcfServiceApp\WcfServiceApp\obj\Debug\WcfServiceApp.pdb

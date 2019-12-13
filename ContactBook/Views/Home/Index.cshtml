@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ContactBook.ServiceReference.Contacts>
+
+@{
+    ViewBag.Title = "WCF приложение";
+}
+
+<h2>Адресная книга 1.0</h2>
+
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Удалить", "DeleteContact", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="text-center">
+    <p>
+        <a href="/Home/CreateContact" class="btn btn-primary">Новый контакт &raquo;</a>
+        <a href="/Home/DeleteContact" class="btn btn-danger">Удалить контакт &raquo;</a>
+    </p>
+</div>

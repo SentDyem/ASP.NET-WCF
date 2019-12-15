@@ -107,10 +107,10 @@ namespace ContactBook.ServiceReference {
         System.Threading.Tasks.Task<int> CreateContactAsync(string name, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/DeleteContact", ReplyAction="http://tempuri.org/IBookService/DeleteContactResponse")]
-        bool DeleteContact(int id);
+        void DeleteContact(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookService/DeleteContact", ReplyAction="http://tempuri.org/IBookService/DeleteContactResponse")]
-        System.Threading.Tasks.Task<bool> DeleteContactAsync(int id);
+        System.Threading.Tasks.Task DeleteContactAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -156,11 +156,11 @@ namespace ContactBook.ServiceReference {
             return base.Channel.CreateContactAsync(name, email);
         }
         
-        public bool DeleteContact(int id) {
-            return base.Channel.DeleteContact(id);
+        public void DeleteContact(int id) {
+            base.Channel.DeleteContact(id);
         }
         
-        public System.Threading.Tasks.Task<bool> DeleteContactAsync(int id) {
+        public System.Threading.Tasks.Task DeleteContactAsync(int id) {
             return base.Channel.DeleteContactAsync(id);
         }
     }

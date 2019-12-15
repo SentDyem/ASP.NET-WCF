@@ -10,24 +10,23 @@ namespace ContactBook.Controllers
 {
     public class HomeController : Controller
     {
-        ServiceReference.BookServiceClient obj = new ServiceReference.BookServiceClient();
+        ServiceReference.BookServiceClient ServiceClient = new ServiceReference.BookServiceClient();
 
         public ActionResult Index()
         {
-            Response.AddHeader("Refresh", "5");
-            return View(obj.GetContacts());
+            return View(ServiceClient.GetContacts());
         }
 
         [HttpGet]
-        public ActionResult DeleteContact()
+        public ActionResult DeleteContact(Contacts contact)
         {
-            return View();
+            return View(contact);
         }
 
-        [HttpPost]
-        public ActionResult DeleteContact(int id)
+        [HttpPost, ActionName("DeleteContact")]
+        public ActionResult DeleteConfirmed(int id)
         {
-            obj.DeleteContact(id);
+            ServiceClient.DeleteContact(id);
             return RedirectToAction("Index", "Home");
         }
 
@@ -43,10 +42,10 @@ namespace ContactBook.Controllers
         {
             if (ModelState.IsValid)
             {
-                Contacts con = new Contacts();
-                con.Name = contact.Name;
-                con.Email = contact.Email;
-                obj.CreateContact(con.Name, con.Email);
+                Contacts dto = new Contacts();
+                dto.Name = contact.Name;
+                dto.Email = contact.Email;
+                ServiceClient.CreateContact(dto.Name, dto.Email);
                 return RedirectToAction("Index", "Home");
             }
             return View();

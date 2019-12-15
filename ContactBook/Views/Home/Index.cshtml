@@ -4,7 +4,7 @@
     ViewBag.Title = "WCF приложение";
 }
 
-<h2>Адресная книга 1.0</h2>
+<h2>Адресная книга 1.1</h2>
 
 
 <table class="table table-hover">
@@ -31,9 +31,10 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+
         </td>
         <td>
-            @Html.ActionLink("Удалить", "DeleteContact", new { id = item.Id })
+            @Html.ActionLink("Удалить", "DeleteContact", new { id = item.Id }, new {@class = "btn btn-default" })
         </td>
     </tr>
 }
@@ -41,7 +42,6 @@
 </table>
 <div class="text-center">
     <p>
-        <a href="/Home/CreateContact" class="btn btn-primary">Новый контакт &raquo;</a>
-        <a href="/Home/DeleteContact" class="btn btn-danger">Удалить контакт &raquo;</a>
+        <a href="/Home/CreateContact" class="btn btn-primary">Новый контакт</a>
     </p>
 </div>

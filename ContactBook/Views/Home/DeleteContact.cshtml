@@ -1,12 +1,32 @@
 ﻿@model ContactBook.ServiceReference.Contacts
 
 @{
-    ViewBag.Title = "Удаление контакта";
+    ViewBag.Title = "DeleteContact";
 }
 
-<h2>Удаление контакта</h2>
-<form method="post" action="@Url.Action("DeleteContact")">
-    Введите ID контакта:<input type="text" name="Id" />
-    <input type="submit" value="Удалить контакт" class="btn btn-warning" />
-    <div class="form-control-feedback"></div>
-</form>
+<h2>DeleteContact</h2>
+
+<h3>Вы действительно хотите удалить контакт?</h3>
+<div>
+    <h4>Contacts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-warning" /> |
+            <a href="/Home/Index" class="btn btn-primary">К списку контактов</a>
+        </div>
+    }
+</div>

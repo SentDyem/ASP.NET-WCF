@@ -14,39 +14,39 @@ namespace WcfService
 
         public int CreateContact(string name, string email)
         {
-            ContactEntities obj = new ContactEntities();
-            Contacts cobj = new Contacts();
-            cobj.Name = name;
-            cobj.Email = email;
-            obj.Contacts.Add(cobj);
-            obj.SaveChanges();
-            int iden = cobj.Id;
+            ContactEntities dto = new ContactEntities();
+            Contacts cObj = new Contacts();
+            cObj.Name = name;
+            cObj.Email = email;
+            dto.Contacts.Add(cObj);
+            dto.SaveChanges();
+            int iden = cObj.Id;
             return iden;
         }
 
         public void DeleteContact(int id)
         {
-            ContactEntities obj = new ContactEntities();
-            Contacts cobj = new Contacts();
-            cobj.Id = id;
-            obj.Entry(cobj).State = EntityState.Deleted;
-            obj.SaveChanges();
+            ContactEntities dto = new ContactEntities();
+            Contacts cObj = new Contacts();
+            cObj.Id = id;
+            dto.Entry(cObj).State = EntityState.Deleted;
+            dto.SaveChanges();
         }
 
         public List<Contacts> GetContacts()
         {
-            List<Contacts> contactlist = new List<Contacts>();
-            ContactEntities obj = new ContactEntities();
-            var list = from k in obj.Contacts select k;
+            List<Contacts> contactList = new List<Contacts>();
+            ContactEntities dto = new ContactEntities();
+            var list = from k in dto.Contacts select k;
             foreach (var item in list)
             {
                 Contacts contact = new Contacts();
                 contact.Id = item.Id;
                 contact.Name = item.Name;
                 contact.Email = item.Email;
-                contactlist.Add(contact);
+                contactList.Add(contact);
             }
-            return contactlist;
+            return contactList;
         }
     }
 }

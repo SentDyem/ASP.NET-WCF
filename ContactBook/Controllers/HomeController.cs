@@ -59,5 +59,14 @@ namespace ContactBook.Controllers
         {
             return View();
         }
+        //[HttpPost]
+        //public JsonResult ValidateEmail(Contact contact) 
+        //{
+        //    Contact dto = new Contact()
+        //        contact.Email = dto.Email;
+        //    var testObj = dto.Email();
+
+        //    return Json(testObj, JsonRequestBehavior.AllowGet);
+        //}
     }
 }

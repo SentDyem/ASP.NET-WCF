@@ -4,9 +4,7 @@
 @{
     ViewBag.Title = "WCF приложение";
 }
-
-<h2>Адресная книга 1.2 alpha version</h2>
-
+    <h3 class="container-fluid text-center">Адресная книга 1.2 alpha version</h3>
 
 <table class="table table-hover">
     <tr>
@@ -51,3 +49,6 @@
 Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
 
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+<div class="text-right">
+    <p><a href="https://github.com/sentdyem" class="btn btn-success">GitHub разработчика</a></p>
+</div>

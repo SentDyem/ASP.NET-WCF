@@ -16,13 +16,19 @@ namespace WcfService
         {
                 ContactEntities dto = new ContactEntities();
                 Contacts cObj = new Contacts();
+            if (name == null || email == null)
+            {
+                return 0;
+            }
+            else
+            {
                 cObj.Name = name;
                 cObj.Email = email;
                 dto.Contacts.Add(cObj);
                 dto.SaveChanges();
                 int iden = cObj.Id;
                 return iden;
-            
+            }
             }
                 
 
@@ -33,6 +39,8 @@ namespace WcfService
             cObj.Id = id;
             dto.Entry(cObj).State = EntityState.Deleted;
             dto.SaveChanges();
+
+
         }
 
         public List<Contacts> GetContacts()

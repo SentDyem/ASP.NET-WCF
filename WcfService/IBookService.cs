@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CustomValidations;
+using Microsoft.Practices.EnterpriseLibrary.Validation.Validators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +11,7 @@ using System.Text;
 namespace WcfService
 {
     [ServiceContract]
+    [ValidationBehavior]
     public interface IBookService
     {
 
@@ -28,12 +31,9 @@ namespace WcfService
         public string Id { get; set; }
 
         [DataMember]
-        [Required]
         public string Name { get; set; }
 
         [DataMember]
-        [EmailAddress]
-        [Required]
         public string Email { get; set; }
     }
 }

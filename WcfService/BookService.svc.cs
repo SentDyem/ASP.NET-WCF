@@ -14,14 +14,14 @@ namespace WcfService
 
         public int CreateContact(string name, string email)
         {
-            ContactEntities dto = new ContactEntities();
-            Contacts cObj = new Contacts();
-            cObj.Name = name;
-            cObj.Email = email;
-            dto.Contacts.Add(cObj);
-            dto.SaveChanges();
-            int iden = cObj.Id;
-            return iden;
+                ContactEntities dto = new ContactEntities();
+                Contacts cObj = new Contacts();
+                cObj.Name = name;
+                cObj.Email = email;
+                dto.Contacts.Add(cObj);
+                dto.SaveChanges();
+                int iden = cObj.Id;
+                return iden;
         }
 
         public void DeleteContact(int id)

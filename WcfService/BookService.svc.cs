@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Web.ModelBinding;
 
 namespace WcfService
 {
@@ -37,8 +38,16 @@ namespace WcfService
             ContactEntities dto = new ContactEntities();
             Contacts cObj = new Contacts();
             cObj.Id = id;
-            dto.Entry(cObj).State = EntityState.Deleted;
-            dto.SaveChanges();
+            //int? value = 0;
+            //if (value == 0)
+            //{
+            //    value = null;
+            //}
+
+                dto.Entry(cObj).State = EntityState.Deleted;
+                dto.SaveChanges();
+            
+
 
 
         }

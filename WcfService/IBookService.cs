@@ -24,6 +24,7 @@ namespace WcfService
 
         [OperationContract]
         void DeleteContact(int id);
+
     }
     [DataContract]
     public class Contact

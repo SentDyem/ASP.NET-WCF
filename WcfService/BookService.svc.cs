@@ -10,7 +10,7 @@ namespace WcfService
 {
     public class BookService : IBookService
     {
-        
+
 
         public int CreateContact(string name, string email)
         {
@@ -22,7 +22,9 @@ namespace WcfService
                 dto.SaveChanges();
                 int iden = cObj.Id;
                 return iden;
-        }
+            
+            }
+                
 
         public void DeleteContact(int id)
         {
@@ -37,7 +39,7 @@ namespace WcfService
         {
             List<Contacts> contactList = new List<Contacts>();
             ContactEntities dto = new ContactEntities();
-            var list = from k in dto.Contacts select k;
+            var list = dto.Contacts.Select(t => t);
             foreach (var item in list)
             {
                 Contacts contact = new Contacts();

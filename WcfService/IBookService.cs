@@ -19,6 +19,7 @@ namespace WcfService
         List<Contacts> GetContacts();
 
         [OperationContract]
+        [FaultContract(typeof(ValidationFault))]
         int CreateContact(string name, string email);
 
         [OperationContract]
@@ -31,10 +32,11 @@ namespace WcfService
         public string Id { get; set; }
 
         [DataMember]
-        [StringLength(100, MinimumLength = 10)]
+        [StringLengthValidator(3, 50, MessageTemplate = "Поле должно содержать минимум 3 символа")]
         public string Name { get; set; }
 
         [DataMember]
+        [EmailAddress]
         public string Email { get; set; }
     }
 }

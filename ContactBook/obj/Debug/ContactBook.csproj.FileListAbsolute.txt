@@ -264,3 +264,7 @@ C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.csproj.CoreCompileInput
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.csproj.CopyComplete
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.pdb
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.dll
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.Mvc.dll
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.xml
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.Mvc.xml

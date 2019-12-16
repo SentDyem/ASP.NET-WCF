@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace ContactBook.Controllers
 {
@@ -12,9 +14,11 @@ namespace ContactBook.Controllers
     {
         ServiceReference.BookServiceClient ServiceClient = new ServiceReference.BookServiceClient();
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(ServiceClient.GetContacts());
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(ServiceClient.GetContacts().ToPagedList(pageNumber, pageSize));
         }
 
         [HttpGet]

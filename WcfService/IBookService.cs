@@ -8,22 +8,39 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-
 namespace WcfService
 {
     [ServiceContract]
     [ValidationBehavior]
     public interface IBookService
     {
-        [OperationContract]
 
+        [OperationContract]
         List<Contacts> GetContacts();
 
         [OperationContract]
+        [FaultContract(typeof(ValidationFault))]
         int CreateContact(string name, string email);
 
         [OperationContract]
         void DeleteContact(int id);
 
+    }
+
+
+    [DataContract]
+    public class Contact
+    {
+        [DataMember]
+        public string Id { get; set; }
+
+        [DataMember]
+        [StringLengthValidator(3, 50, MessageTemplate = "Поле должно содержать минимум 3 символа")]
+        [Required]
+        public string Name { get; set; }
+
+        [DataMember]
+        [EmailAddress(ErrorMessage = "Адрес введен некорректно")]
+        public string Email { get; set; }
     }
 }

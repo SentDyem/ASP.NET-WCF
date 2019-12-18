@@ -39,7 +39,6 @@ C:\PROJECT\ASP.NET-WCF\WcfService\obj\Debug\WcfService.csproj.CoreCompileInputs.
 C:\PROJECT\ASP.NET-WCF\WcfService\obj\Debug\WcfService.csproj.CopyComplete
 C:\PROJECT\ASP.NET-WCF\WcfService\obj\Debug\WcfService.dll
 C:\PROJECT\ASP.NET-WCF\WcfService\obj\Debug\WcfService.pdb
-C:\PROJECT\ASP.NET-WCF\WcfService\obj\Debug\WcfService.csprojAssemblyReference.cache
 C:\PROJECT\ASP.NET-WCF\WcfService\bin\CustomValidations.dll
 C:\PROJECT\ASP.NET-WCF\WcfService\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
 C:\PROJECT\ASP.NET-WCF\WcfService\bin\Microsoft.Practices.EnterpriseLibrary.Validation.dll
@@ -50,3 +49,4 @@ C:\PROJECT\ASP.NET-WCF\WcfService\bin\Microsoft.Practices.Unity.Interception.dll
 C:\PROJECT\ASP.NET-WCF\WcfService\bin\CustomValidations.xml
 C:\PROJECT\ASP.NET-WCF\WcfService\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\PROJECT\ASP.NET-WCF\WcfService\bin\Microsoft.Practices.EnterpriseLibrary.Validation.xml
+C:\PROJECT\ASP.NET-WCF\WcfService\obj\Debug\WcfService.csprojAssemblyReference.cache

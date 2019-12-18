@@ -8,6 +8,6 @@ namespace WcfService
 {
     public class ContactContext : DbContext
     {
-        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Contacts> Contact { get; set; }
     }
 }

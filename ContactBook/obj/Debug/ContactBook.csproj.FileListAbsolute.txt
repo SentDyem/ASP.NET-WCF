@@ -230,6 +230,8 @@ C:\PROJECT\ASP.NET-WCF\ContactBook\bin\EntityFramework.SqlServer.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\Microsoft.Web.Infrastructure.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\Newtonsoft.Json.dll
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.dll
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.Mvc.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.Helpers.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.Mvc.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.Optimization.dll
@@ -240,6 +242,8 @@ C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.WebPages.Razor.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\WebGrease.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\EntityFramework.xml
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\EntityFramework.SqlServer.xml
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.xml
+C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.Mvc.xml
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.Helpers.xml
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.Mvc.xml
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\System.Web.Optimization.xml
@@ -259,12 +263,7 @@ C:\PROJECT\ASP.NET-WCF\ContactBook\bin\ru\System.Web.Razor.resources.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\ru\System.Web.WebPages.resources.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.csprojAssemblyReference.cache
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.csproj.CoreCompileInputs.cache
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.csproj.CopyComplete
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.dll
 C:\PROJECT\ASP.NET-WCF\ContactBook\obj\Debug\ContactBook.pdb
-C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.dll
-C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.Mvc.dll
-C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.xml
-C:\PROJECT\ASP.NET-WCF\ContactBook\bin\PagedList.Mvc.xml

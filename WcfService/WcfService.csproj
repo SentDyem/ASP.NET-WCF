@@ -108,6 +108,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookData.cs" />
     <Compile Include="BookService.svc.cs">
       <DependentUpon>BookService.svc</DependentUpon>
     </Compile>

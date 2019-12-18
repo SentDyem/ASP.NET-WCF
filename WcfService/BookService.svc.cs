@@ -11,52 +11,42 @@ namespace WcfService
 {
     public class BookService : IBookService
     {
-
-
         public int CreateContact(string name, string email)
         {
-                ContactEntities dto = new ContactEntities();
-                Contacts cObj = new Contacts();
-            if (name == null || email == null)
+                ContactEntities contactDB = new ContactEntities();
+                Contacts dto = new Contacts();
+            if (name == null || name == "" || email == null || email == "")
             {
-                return 0;
+                throw new Exception("Поля не прошли валидацию. Проверьте корректность введенных данных!");
             }
+
             else
             {
-                cObj.Name = name;
-                cObj.Email = email;
-                dto.Contacts.Add(cObj);
-                dto.SaveChanges();
-                int iden = cObj.Id;
-                return iden;
+                dto.Name = name;
+                dto.Email = email;
+                contactDB.Contacts.Add(dto);
+                contactDB.SaveChanges();
+                int id = dto.Id;
+                return id;
             }
-            }
+        }
                 
 
         public void DeleteContact(int id)
         {
-            ContactEntities dto = new ContactEntities();
-            Contacts cObj = new Contacts();
-            cObj.Id = id;
-            //int? value = 0;
-            //if (value == 0)
-            //{
-            //    value = null;
-            //}
-
-                dto.Entry(cObj).State = EntityState.Deleted;
-                dto.SaveChanges();
-            
-
-
+            ContactEntities contactDB = new ContactEntities();
+            Contacts dto = new Contacts();
+                dto.Id = id;
+                contactDB.Entry(dto).State = EntityState.Deleted;
+                contactDB.SaveChanges();
 
         }
 
         public List<Contacts> GetContacts()
         {
             List<Contacts> contactList = new List<Contacts>();
-            ContactEntities dto = new ContactEntities();
-            var list = dto.Contacts.Select(t => t);
+            ContactEntities contactDB = new ContactEntities();
+            var list = contactDB.Contacts.Select(t => t);
             foreach (var item in list)
             {
                 Contacts contact = new Contacts();

@@ -16,7 +16,7 @@ namespace ContactBook.Controllers
 
         public ActionResult Index(int? page)
         {
-            int pageSize = 5;
+            int pageSize = 5; // вынести pagerSize в веб-конфиг и получить по ключу
             int pageNumber = (page ?? 1);
             return View(serviceClient.GetContacts().ToPagedList(pageNumber, pageSize));
         }

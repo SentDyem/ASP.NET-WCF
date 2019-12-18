@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using System.Web.ModelBinding;
 
 namespace WcfService
 {
@@ -13,9 +9,10 @@ namespace WcfService
     {
         public int CreateContact(string name, string email)
         {
-                ContactEntities contactDB = new ContactEntities();
-                Contacts dto = new Contacts();
-            if (name == null || name == "" || email == null || email == "")
+            ContactEntities contactDb = new ContactEntities();
+            Contacts dto = new Contacts();
+
+            if (name == null || name == "" || email == null || email == "") // неоптимальная конструкция, нужно отрефакторить
             {
                 throw new Exception("Поля не прошли валидацию. Проверьте корректность введенных данных!");
             }
@@ -24,29 +21,29 @@ namespace WcfService
             {
                 dto.Name = name;
                 dto.Email = email;
-                contactDB.Contacts.Add(dto);
-                contactDB.SaveChanges();
+                contactDb.Contacts.Add(dto);
+                contactDb.SaveChanges();
                 int id = dto.Id;
                 return id;
             }
         }
                 
-
         public void DeleteContact(int id)
         {
             ContactEntities contactDB = new ContactEntities();
             Contacts dto = new Contacts();
-                dto.Id = id;
-                contactDB.Entry(dto).State = EntityState.Deleted;
-                contactDB.SaveChanges();
 
+            dto.Id = id;
+            contactDB.Entry(dto).State = EntityState.Deleted;
+            contactDB.SaveChanges();
         }
 
         public List<Contacts> GetContacts()
         {
             List<Contacts> contactList = new List<Contacts>();
-            ContactEntities contactDB = new ContactEntities();
-            var list = contactDB.Contacts.Select(t => t);
+            ContactEntities contactDb = new ContactEntities();
+            var list = contactDb.Contacts.Select(t => t);
+
             foreach (var item in list)
             {
                 Contacts contact = new Contacts();

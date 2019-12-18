@@ -15,10 +15,11 @@ namespace WcfService
         {
                 ContactEntities contactDB = new ContactEntities();
                 Contacts dto = new Contacts();
-            if (name == null || email == null)
+            if (name == null || name == "" || email == null || email == "")
             {
-                throw new Exception("Валидность не прошла");
+                throw new Exception("Поля не прошли валидацию. Проверьте корректность введенных данных!");
             }
+
             else
             {
                 dto.Name = name;
@@ -28,25 +29,16 @@ namespace WcfService
                 int id = dto.Id;
                 return id;
             }
-            }
+        }
                 
 
         public void DeleteContact(int id)
         {
             ContactEntities contactDB = new ContactEntities();
             Contacts dto = new Contacts();
-            dto.Id = id;
-            //int? value = 0;
-            //if (value == 0)
-            //{
-            //    value = null;
-            //}
-
+                dto.Id = id;
                 contactDB.Entry(dto).State = EntityState.Deleted;
                 contactDB.SaveChanges();
-            
-
-
 
         }
 

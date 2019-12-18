@@ -26,6 +26,8 @@ namespace WcfService
         void DeleteContact(int id);
 
     }
+
+
     [DataContract]
     public class Contact
     {
@@ -34,10 +36,11 @@ namespace WcfService
 
         [DataMember]
         [StringLengthValidator(3, 50, MessageTemplate = "Поле должно содержать минимум 3 символа")]
+        [Required]
         public string Name { get; set; }
 
         [DataMember]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Адрес введен некорректно")]
         public string Email { get; set; }
     }
 }

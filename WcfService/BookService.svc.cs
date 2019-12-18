@@ -11,15 +11,13 @@ namespace WcfService
 {
     public class BookService : IBookService
     {
-
-
         public int CreateContact(string name, string email)
         {
                 ContactEntities contactDB = new ContactEntities();
                 Contacts dto = new Contacts();
             if (name == null || email == null)
             {
-                return 0;
+                throw new Exception("Валидность не прошла");
             }
             else
             {
@@ -27,8 +25,8 @@ namespace WcfService
                 dto.Email = email;
                 contactDB.Contacts.Add(dto);
                 contactDB.SaveChanges();
-                int identify = dto.Id;
-                return identify;
+                int id = dto.Id;
+                return id;
             }
             }
                 

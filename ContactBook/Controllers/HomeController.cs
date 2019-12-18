@@ -12,13 +12,13 @@ namespace ContactBook.Controllers
 {
     public class HomeController : Controller
     {
-        ServiceReference.BookServiceClient ServiceClient = new ServiceReference.BookServiceClient();
+        ServiceReference.BookServiceClient serviceClient = new ServiceReference.BookServiceClient();
 
         public ActionResult Index(int? page)
         {
             int pageSize = 5;
             int pageNumber = (page ?? 1);
-            return View(ServiceClient.GetContacts().ToPagedList(pageNumber, pageSize));
+            return View(serviceClient.GetContacts().ToPagedList(pageNumber, pageSize));
         }
 
         [HttpGet]
@@ -30,7 +30,7 @@ namespace ContactBook.Controllers
         [HttpPost, ActionName("DeleteContact")]
         public ActionResult DeleteConfirmed(int id)
         {
-            ServiceClient.DeleteContact(id);
+            serviceClient.DeleteContact(id);
             return RedirectToAction("Index", "Home");
         }
 
@@ -49,7 +49,7 @@ namespace ContactBook.Controllers
                 Contacts dto = new Contacts();
                 dto.Name = contact.Name;
                 dto.Email = contact.Email;
-                ServiceClient.CreateContact(dto.Name, dto.Email);
+                serviceClient.CreateContact(dto.Name, dto.Email);
                 return RedirectToAction("Index", "Home");
             }
             return View();

@@ -15,37 +15,37 @@ namespace WcfService
 
         public int CreateContact(string name, string email)
         {
-                ContactEntities dto = new ContactEntities();
-                Contacts cObj = new Contacts();
+                ContactEntities contactDB = new ContactEntities();
+                Contacts dto = new Contacts();
             if (name == null || email == null)
             {
                 return 0;
             }
             else
             {
-                cObj.Name = name;
-                cObj.Email = email;
-                dto.Contacts.Add(cObj);
-                dto.SaveChanges();
-                int iden = cObj.Id;
-                return iden;
+                dto.Name = name;
+                dto.Email = email;
+                contactDB.Contacts.Add(dto);
+                contactDB.SaveChanges();
+                int identify = dto.Id;
+                return identify;
             }
             }
                 
 
         public void DeleteContact(int id)
         {
-            ContactEntities dto = new ContactEntities();
-            Contacts cObj = new Contacts();
-            cObj.Id = id;
+            ContactEntities contactDB = new ContactEntities();
+            Contacts dto = new Contacts();
+            dto.Id = id;
             //int? value = 0;
             //if (value == 0)
             //{
             //    value = null;
             //}
 
-                dto.Entry(cObj).State = EntityState.Deleted;
-                dto.SaveChanges();
+                contactDB.Entry(dto).State = EntityState.Deleted;
+                contactDB.SaveChanges();
             
 
 
@@ -55,8 +55,8 @@ namespace WcfService
         public List<Contacts> GetContacts()
         {
             List<Contacts> contactList = new List<Contacts>();
-            ContactEntities dto = new ContactEntities();
-            var list = dto.Contacts.Select(t => t);
+            ContactEntities contactDB = new ContactEntities();
+            var list = contactDB.Contacts.Select(t => t);
             foreach (var item in list)
             {
                 Contacts contact = new Contacts();

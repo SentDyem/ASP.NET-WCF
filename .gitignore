@@ -355,3 +355,8 @@ MigrationBackup/
 # Ignore cache
 *.cache
 *.csproj.*.txt
+
+.vs/WcfServiceApp/v15/.suo
+.vs/WcfServiceApp/v15/.suo
+.vs/WcfServiceApp/v15/Server/sqlite3/storage.ide-shm
+.vs/WcfServiceApp/v15/Server/sqlite3/storage.ide-wal

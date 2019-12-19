@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using System.Configuration;
 
 namespace ContactBook.Controllers
 {
@@ -16,7 +17,7 @@ namespace ContactBook.Controllers
 
         public ActionResult Index(int? page)
         {
-            int pageSize = 5; // вынести pagerSize в веб-конфиг и получить по ключу
+            int pageSize = Convert.ToInt32(ConfigurationManager.AppSettings["pageSize"]);
             int pageNumber = (page ?? 1);
             return View(serviceClient.GetContacts().ToPagedList(pageNumber, pageSize));
         }

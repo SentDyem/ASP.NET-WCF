@@ -12,7 +12,7 @@ namespace WcfService
             ContactEntities contactDb = new ContactEntities();
             Contacts dto = new Contacts();
 
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email)) // неоптимальная конструкция, нужно отрефакторить
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email))
             {
                 throw new Exception("Ошибка добавления! Поля не прошли валидацию");
             }

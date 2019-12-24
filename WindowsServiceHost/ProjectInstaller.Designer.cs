@@ -36,10 +36,12 @@
             this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
             this.serviceProcessInstaller1.Password = null;
             this.serviceProcessInstaller1.Username = null;
+            this.serviceProcessInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceProcessInstaller1_AfterInstall);
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.ServiceName = "WCFHost";
+            this.serviceInstaller1.Description = "Данная служба выполняет функцию хоста для корректной работы WCF сервиса.";
+            this.serviceInstaller1.ServiceName = "WCFHost Service";
             // 
             // ProjectInstaller
             // 

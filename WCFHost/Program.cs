@@ -21,7 +21,7 @@ namespace WCFHost
                 Console.WriteLine("-----------------------------------------");
                 Console.ReadLine();
                 host.Close();
-                
+
             }
         }
     }

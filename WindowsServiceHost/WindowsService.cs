@@ -14,6 +14,7 @@ namespace WindowsServiceHost
 {
     public partial class WindowsService : ServiceBase
     {
+        ServiceHost host;
         public WindowsService()
         {
             InitializeComponent();
@@ -21,8 +22,12 @@ namespace WindowsServiceHost
 
         protected override void OnStart(string[] args)
         {
+            if (host != null)
+            {
+                host.Close();
+            }
             Uri httpUrl = new Uri("http://localhost:5689/BookService.svc");
-            ServiceHost host = new ServiceHost(typeof(WcfService.BookService), httpUrl);
+            host = new ServiceHost(typeof(WcfService.BookService), httpUrl);
             host.AddServiceEndpoint(typeof(WcfService.IBookService), new BasicHttpBinding(), "");
             ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
             smb.HttpGetEnabled = true;
@@ -33,6 +38,10 @@ namespace WindowsServiceHost
 
         protected override void OnStop()
         {
+            if (host != null)
+            {
+                host.Close();
+            }
         }
     }
 }
